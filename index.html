@@ -82,11 +82,11 @@ style="border-radius:15px;">
 <form>
 
     <p>
-       <input id="fullname" type="text" placeholder="Full Name">
+      <input id="fullname" type="text" placeholder="Full Name">
     </p>
 
     <p>
-        <input type="tel" placeholder="Phone Number">
+       <input id="phone" type="tel" placeholder="Phone Number">
     </p>
 <p>
 <select id="ticket">
@@ -95,13 +95,13 @@ style="border-radius:15px;">
 </select>
 </p>
     <p>
-        <input type="email" placeholder="Email">
+       <input id="email" type="email" placeholder="Email">
     </p>
 
 <p>
 <button
 type="button"
-onclick="window.open('https://qr.chapa.global/test/payment-preview/payment-link/qMFQPtJ51l','_blank')">
+onclick="validateAndPay()">
 🎟️ Reserve & Pay
 </button>
 </p>
@@ -117,7 +117,26 @@ onclick="window.open('https://qr.chapa.global/test/payment-preview/payment-link/
     
 </form>
 </div>
-<script>
+<script><script>
+function validateAndPay() {
+
+    let name = document.getElementById("fullname").value.trim();
+
+    let phone = document.getElementById("phone").value.trim();
+
+    let email = document.getElementById("email").value.trim();
+
+    if (name === "" || phone === "" || email === "") {
+        alert("Please fill in Name, Phone Number, and Email before proceeding.");
+        return;
+    }
+
+    window.open(
+        "https://qr.chapa.global/test/payment-preview/payment-link/qMFQPtJ51l",
+        "_blank"
+    );
+}
+</script>
 
 function showTicketMessage() {
     alert("🎟 Regular Ticket: 700 ETB\n🎟 VIP Ticket: 1000 ETB");
