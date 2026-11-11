@@ -142,35 +142,6 @@ setInterval(function () {
 
 }, 1000);
 </script>
-function validateAndPay() {
 
-    let name = document.getElementById("fullname").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let email = document.getElementById("email").value.trim();
-
-    if (name === "" || phone === "" || email === "") {
-        alert("Please fill in Name, Phone Number, and Email.");
-        return;
-    }
-
-    window.open(
-        "https://qr.chapa.global/test/payment-preview/payment-link/qMFQPtJ51l",
-        "_blank"
-    );
-}
-
-let eventDate = new Date("June 20, 2027 00:00:00").getTime();
-
-setInterval(function () {
-
-    let today = new Date().getTime();
-    let distance = eventDate - today;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-    document.getElementById("countdown").innerHTML =
-        "⏳ " + days + " days remaining";
-
-}, 1000);
-</script>
 </body>
 </html>
